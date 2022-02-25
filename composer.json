@@ -1,0 +1,33 @@
+{
+    "name": "exit11/banner",
+    "description": "mpcs core : banner extention",
+    "type": "library",
+    "authors": [
+        {
+            "name": "HWAJUN LEE",
+            "email": "ezrock@naver.com"
+        }
+    ],
+    "require": {
+        "mpcs-ui/bootstrap5": "~0.1.0|dev-master",
+        "mpcs/core": "~0.1.0|dev-master"
+    },
+    "autoload": {
+        "psr-4": {
+            "Exit11\\Banner\\": "src/"
+        }
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Exit11\\Banner\\BannerServiceProvider",
+                "Exit11\\Banner\\BannerAuthServiceProvider",
+                "Exit11\\Banner\\BannerEventServiceProvider",
+                "Exit11\\Banner\\BannerBroadcastServiceProvider"
+            ],
+            "aliases": {
+                "Banner": "Exit11\\Banner\\Facades\\Banner"
+            }
+        }
+    }
+}
