@@ -24,7 +24,7 @@ class BannerRepository implements BannerRepositoryInterface
         $apiSelectParams = [
             // id, name [,'is_visible']
             'item_list' => ['id', 'title'],
-            'attribute_name' => trans('mpcs-article::word.attr.popup')
+            'attribute_name' => trans('mpcs-article::word.attr.banner')
         ];
         $model = $this->model::allow()->search($enableRequestParam);
 
@@ -44,8 +44,8 @@ class BannerRepository implements BannerRepositoryInterface
         /* DB 트랜젝션 시작 */
         DB::beginTransaction();
         try {
+            $this->model->banner_group_id = $this->request['banner_group_id'];
             $this->model->title = $this->request['title'];
-            $this->model->type = $this->request['type'];
             $this->model->content = $this->request['content'] ?? null;
             $this->model->background_color = $this->request['background_color'] ?? null;
             $this->model->url = $this->request['url'] ?? null;
@@ -87,13 +87,12 @@ class BannerRepository implements BannerRepositoryInterface
         /* DB 트랜젝션 시작 */
         DB::beginTransaction();
         try {
-            $model->type = $this->request['type'];
             $model->title = $this->request['title'];
+            $model->content = $this->request['content'] ?? null;
             $model->target = $this->request['target'];
             $model->period_from = $this->request['period_from'];
             $model->period_to = $this->request['period_to'];
             $model->is_visible = $this->request['is_visible'] ?? null;
-            $model->content = $this->request['content'] ?? null;
             $model->background_color = $this->request['background_color'] ?? null;
             $model->url = $this->request['url'] ?? null;
             $model->user_id = Core::user()->id;

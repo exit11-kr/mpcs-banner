@@ -38,23 +38,23 @@ class BannerController extends Controller
     /**
      * edit
      *
-     * @param  mixed $popup
+     * @param  mixed $banner
      * @return void
      */
-    public function edit(Model $popup)
+    public function edit(Model $banner)
     {
-        return new Resource($this->service->edit($popup));
+        return new Resource($this->service->edit($banner));
     }
 
     /**
      * show
      *
-     * @param  mixed $popup
+     * @param  mixed $banner
      * @return void
      */
-    public function show(Model $popup)
+    public function show(Model $banner)
     {
-        return new Resource($this->service->show($popup));
+        return new Resource($this->service->show($banner));
     }
 
     /**
@@ -75,9 +75,9 @@ class BannerController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Model $popup)
+    public function update(Request $request, Model $banner)
     {
-        return new Resource($this->service->update($popup));
+        return new Resource($this->service->update($banner));
     }
 
     /**
@@ -86,9 +86,9 @@ class BannerController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Model $popup)
+    public function destroy(Model $banner)
     {
-        return Core::responseJson($this->service->destroy($popup));
+        return Core::responseJson($this->service->destroy($banner));
     }
 
     /**
@@ -97,8 +97,8 @@ class BannerController extends Controller
      * @param  mixed $request
      * @return void
      */
-    public function orderable(Request $request, Model $popup)
+    public function orderable(Request $request, Model $banner)
     {
-        return Core::responseJson($this->service->orderable($popup));
+        return Core::responseJson($this->service->orderable($banner));
     }
 }

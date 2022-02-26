@@ -34,11 +34,17 @@ class InstallCommand extends Command
         $this->isForce = true;
         $this->isReset = true;
 
-        $confirmMessage = 'Core를 설치하시겠습니까? DB가 초기화되어, 유실될 수 있습니다. 설치를 계속 진행하시겠습니까?';
+        $confirmMessage = 'MPCS Banner를 설치하시겠습니까? DB가 초기화되어, 유실될 수 있습니다. 설치를 계속 진행하시겠습니까?';
         $confirmMessage .= PHP_EOL . '(리소스는 덮어쓰기 됩니다.)';
 
         if (!app()->environment(['production'])) {
             if ($this->confirm($confirmMessage)) {
+
+                $this->call('db:seed', ['--class' => "Exit11\Banner\Seeds\BannerInstallSeeder"]);
+
+                $this->line('<info>Inserted Banner Permission</info>');
+                $this->call('cache:clear');
+                $this->call('config:cache');
             }
         } else {
             $this->error('운영환경에서는 실행할 수 없습니다.');

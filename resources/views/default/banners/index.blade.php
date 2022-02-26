@@ -87,6 +87,10 @@
 {{-- CURD 스크립트 추가 --}}
 @push('after_app_scripts')
     <script>
-        window.CRUD.init();
+        window.CRUD.init(undefined, {
+            initListParams: {
+                'banner_group_id': '{{ request()->get('banner_group_id') }}',
+            },
+        });
     </script>
 @endpush

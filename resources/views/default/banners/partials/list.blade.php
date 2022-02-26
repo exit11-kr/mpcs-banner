@@ -10,9 +10,6 @@
             <th class="text-center min-width-rem-4 d-none d-md-table-cell">
                 ID
             </th>
-            <th class="text-center min-width-rem-4">
-                {{ trans('mpcs-article::word.attr.type') }}
-            </th>
             <th class="text-center">
                 {{ trans('mpcs-article::word.attr.title') }}
             </th>
@@ -72,11 +69,6 @@
                 <td data-name='id' class="text-md-center d-none d-md-table-cell">
                     {{ $data->id }}
                 </td>
-                <td data-name='type' class="text-md-center d-none d-md-table-cell">
-                    <span class="badge bg-{{ $data->type == 'TEXT' ? 'success' : 'warning' }}">
-                        {{ $data->type }}
-                    </span>
-                </td>
                 <td class="text-start d-block d-md-table-cell">
                     <div class="row no-gutters align-items-center">
                         @if ($data->image)
@@ -103,7 +95,7 @@
                 </td>
                 <td data-name='status_released' class="text-start text-md-center d-block d-md-table-cell">
                     <span class="badge bg-{{ $data->status_released ? 'success' : 'warning' }}">
-                        {{ $data->status_released ? trans('mpcs-article::word.attr.released') : trans('mpcs-article::word.attr.nonrelease') }}
+                        {{ $data->status_released? trans('mpcs-article::word.attr.released'): trans('mpcs-article::word.attr.nonrelease') }}
                     </span>
                 </td>
                 <td class="d-block d-md-table-cell text-end text-md-center">

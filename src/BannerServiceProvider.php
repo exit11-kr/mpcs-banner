@@ -12,7 +12,7 @@ class BannerServiceProvider extends ServiceProvider
      * @var array
      */
     protected $commands = [
-        // Console\InstallCommand::class,
+        Commands\InstallCommand::class,
         Commands\SeedCommand::class,
     ];
 

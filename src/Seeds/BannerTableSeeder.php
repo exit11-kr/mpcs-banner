@@ -5,9 +5,10 @@ namespace Exit11\Banner\Seeds;
 use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\DB;
 
-use Exit11\Banner\Models\Popup;
+use Exit11\Banner\Models\Banner;
+use Exit11\Banner\Models\BannerGroup;
 
-class PopupTableSeeder extends Seeder
+class BannerTableSeeder extends Seeder
 {
     /**
      * Run the database seeds.
@@ -18,8 +19,11 @@ class PopupTableSeeder extends Seeder
     {
         DB::statement('SET FOREIGN_KEY_CHECKS=0;');
 
-        Popup::truncate();
-        factory(Popup::class, 80)->create();
+        BannerGroup::truncate();
+        factory(BannerGroup::class, 10)->create();
+
+        Banner::truncate();
+        factory(Banner::class, 100)->create();
 
         DB::statement('SET FOREIGN_KEY_CHECKS=1;');
     }

@@ -5,14 +5,14 @@ namespace Exit11\Banner\Models;
 use Exit11\Banner\Facades\Banner as Facade;
 use Illuminate\Database\Eloquent\Model;
 use Mpcs\Core\Traits\ModelTrait;
-// use Exit11\Bootstrap5\Traits\Orderable;
-// use Exit11\Bootstrap5\Traits\OrderableTrait;
+use MpcsUi\Bootstrap5\Traits\Orderable;
+use MpcsUi\Bootstrap5\Traits\OrderableTrait;
 use Illuminate\Support\Carbon;
 use Illuminate\Support\Facades\Storage;
 
-class Banner extends Model
+class Banner extends Model implements Orderable
 {
-    use ModelTrait;
+    use ModelTrait, OrderableTrait;
 
     protected $table = 'banners';
     protected $dates = ['created_at', 'updated_at', 'deleted_at', 'period_from', 'period_to'];
@@ -30,6 +30,7 @@ class Banner extends Model
 
     public $orderable = [
         'order_column_name' => 'order',
+        'group_column_name' => 'banner_group_id',
         'sort_when_creating' => true,
     ];
 
@@ -65,6 +66,16 @@ class Banner extends Model
     {
         parent::boot();
         static::setMemberParams(self::$m_params);
+    }
+
+    /**
+     * bannerGroup
+     *
+     * @return void
+     */
+    public function bannerGroup()
+    {
+        return $this->belongsTo('BannerGroup', 'banner_group_id');
     }
 
     /**
@@ -106,28 +117,6 @@ class Banner extends Model
         }
 
         return $result;
-    }
-
-    /**
-     * getTypeAttribute
-     *
-     * @param  mixed $value
-     * @return void
-     */
-    public function getTypeAttribute($value)
-    {
-        return $value ? 'TEXT' : 'IMAGE';
-    }
-
-    /**
-     * setTypeAttribute
-     *
-     * @param  mixed $value
-     * @return void
-     */
-    public function setTypeAttribute($value)
-    {
-        $this->attributes['type'] = ($value == 'IMAGE') ? 0 : 1;
     }
 
     /**

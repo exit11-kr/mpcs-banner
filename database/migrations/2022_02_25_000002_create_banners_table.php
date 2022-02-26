@@ -17,9 +17,8 @@ class CreateBannersTable extends Migration
             $table->increments('id');
             $table->smallInteger('banner_group_id');
             $table->integer('order')->unsigned()->default(1);
-            $table->string('title');
-            $table->LongText('content')->nullable();
-            $table->LongText('html')->nullable();
+            $table->string('title', 100);
+            $table->text('content')->nullable();
             $table->string('image')->nullable();
             $table->string('background_color', 50)->nullable();
             $table->string('url')->nullable();

@@ -5,6 +5,7 @@
  **/
 
 use Exit11\Banner\Models\Banner;
+use Exit11\Banner\Models\BannerGroup;
 use Mpcs\Core\Models\User;
 
 use Faker\Generator as Faker;
@@ -23,22 +24,18 @@ $factory->define(Banner::class, function (Faker $faker) {
     $date = $faker->dateTimeThisMonth;
 
     // 이미지 랜덤 생성 FAKER
-    $ratio = ['400', '500', '600', '700', '800', '900'];
-    $aspectRatio = Arr::random($ratio) . "x" . Arr::random($ratio);
-    $image = 'https://via.placeholder.com/' . $aspectRatio . '.jpg';
-    $imageName = round(microtime(true) * 1000) . '_' . Str::random(10) . '.jpg';
-    $manager = new ImageManager(array('driver' => 'gd'));
-    $manager->make($image)->save(storage_path('app/public/uploads/popups/' . $imageName));
+    // $ratio = ['400', '500', '600', '700', '800', '900'];
+    // $aspectRatio = Arr::random($ratio) . "x" . Arr::random($ratio);
+    // $image = 'https://placeimg.com/' . Arr::random($ratio) . '/' . Arr::random($ratio) . '/any';
+    // $imageName = round(microtime(true) * 1000) . '_' . Str::random(10) . '.jpg';
+    // $manager = new ImageManager(array('driver' => 'gd'));
+    // $manager->make($image)->save(storage_path('app/public/uploads/popups/' . $imageName));
 
     return [
-        'order' => function () {
-            $max = Banner::max('order');
-            return $max + 1;
-        },
-        'type' => $faker->boolean,
+        'banner_group_id' => BannerGroup::inRandomOrder()->first(),
         'title' => $title,
         'content' => $faker->paragraph(),
-        'image' => Bootstrap5::generateThumb('popups', $imageName),
+        // 'image' => Bootstrap5::generateThumb('popups', $imageName),
         'background_color' => $faker->hexColor,
         'url' => $faker->url,
         'target' => $faker->boolean,

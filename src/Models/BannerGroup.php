@@ -2,7 +2,6 @@
 
 namespace Exit11\Banner\Models;
 
-use Mpcs\Core\Facades\Core;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
 use Mpcs\Core\Traits\ModelTrait;
@@ -14,7 +13,6 @@ class BannerGroup extends Model
     use SoftDeletes, ModelTrait;
 
     protected $table = 'banner_groups';
-    public $timestamps = false;
     protected $dates = ['deleted_at'];
     protected $guarded = ['id'];
     public $appends = ['type_str'];

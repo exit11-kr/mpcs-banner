@@ -19,14 +19,15 @@ class BannerRequest extends FormRequest
         $id = $this->banner->id ?? "";
         $rules = [
             'POST' => [
+                'banner_group_id' => 'required|integer',
+                'title' => 'required|max:100',
                 'period_from' => 'required',
                 'period_to' => 'required',
-                'title' => 'required|max:100',
             ],
             'PUT' => [
+                'title' => 'sometimes|required|max:100',
                 'period_from' => 'sometimes|required',
                 'period_to' => 'sometimes|required',
-                'title' => 'sometimes|required|max:100',
             ],
         ];
 
