@@ -58,27 +58,34 @@
         </div>
     </div>
 
-    <div class="col-12 col-sm-6">
-
-        <div class="form-group">
-            <label for="image" class="">
-                {{ trans('mpcs-banner::word.attr.image') }}
-                <button type="button" class="btn p-0" data-bs-container="body" data-bs-toggle="popover"
-                    data-bs-placement="top" title="이미지 규격" data-bs-content="420px * 600px 이미지 사이즈에 최적화 되어 있습니다.">
-                    <i class="mdi mdi-information"></i>
-                </button>
-            </label>
-            <div data-type="image-upload">
-                <div class="ratio ratio-42x60 mx-auto mb-1" style="max-width: 420px;">
-                    <img src="" class="upload-image" data-default-src="{{ Banner::noImage() }}"
-                        data-crud-edit-name="image_file_url" data-crud-edit-type="image">
+    <div class="col-12 col-sm-auto">
+        <div data-type="croppie-image-upload" data-width="420" data-height="600" data-crop-type="squre">
+            <div class="row">
+                <label for="image" class="col">
+                    {{ trans('mpcs-banner::word.attr.image') }}
+                    <button type="button" class="btn p-0" data-bs-container="body" data-bs-toggle="popover"
+                        data-bs-placement="top" title="이미지 규격" data-bs-content="420px * 600px 이미지 사이즈에 최적화 되어 있습니다.">
+                        <i class="mdi mdi-information"></i>
+                    </button>
+                </label>
+                <div class="col-auto">
+                    <button type="button" class="btn btn-info align-middle btn-select" title="">
+                        <i class="mdi mdi-cloud-upload me-1"></i>
+                        파일선택
+                    </button>
+                    <button type="button" class="btn btn-info align-middle btn-result" title="">
+                        <i class="mdi mdi-cloud-upload me-1"></i>
+                        편집완료
+                    </button>
                 </div>
+            </div>
+            <div class="row mt-2">
+                <div class="croppie-image"></div>
+                <img src="{{ Bootstrap5::noImage() }}" class="croppied-image img-fluid" style="padding: 50px"
+                    data-default-src="{{ Bootstrap5::noImage() }}" data-crud-edit-name="image_file_url"
+                    data-crud-edit-type="image">
                 <input type="file" class="d-none" accept=".png,.jpg,.gif" />
                 <input type="hidden" name="image" />
-                <button type="button" class="btn btn-info align-middle" style="width: 100%" title="">
-                    <i class="mdi mdi-cloud-upload me-1"></i>
-                    파일선택
-                </button>
             </div>
         </div>
     </div>
