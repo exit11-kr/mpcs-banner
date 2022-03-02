@@ -73,10 +73,12 @@
                     <div class="row no-gutters align-items-center">
                         @if ($data->image)
                             <div class="col-auto mr-2">
-                                <div class="ratio ratio-1x1" style="width: 40px; ">
-                                    <img class="embed-responsive-item img-thumbnail"
-                                        src="{{ $data->image_file_url }}" alt="{{ $data->title }}">
-                                </div>
+                                <button type="button" class="btn ratio ratio-1x1" style="width: 40px; "
+                                    data-bs-toggle="popover" data-bs-html="true" data-bs-content='<img class="img-fluid"
+                                    src="{{ $data->image_file_url }}" alt="{{ $data->title }}">'>
+                                    <img class="embed-responsive-item img-fluid" src="{{ $data->image_file_url }}"
+                                        alt="{{ $data->title }}">
+                                </button>
                             </div>
                         @endif
                         <div class="col">

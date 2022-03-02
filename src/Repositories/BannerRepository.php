@@ -123,7 +123,7 @@ class BannerRepository implements BannerRepositoryInterface
     // show the record with the given id
     public function get($model)
     {
-        return $model;
+        return $model->load(['user']);
     }
 
     // remove record from the database

@@ -25,7 +25,10 @@ class BannerController extends Controller
         if (!$request->banner_group_id) {
             return redirect()->route(Core::getConfig('ui_route_name_prefix') . '.banners.index', ['banner_group_id' => $categories->first()->id]);
         }
-        return view(Banner::theme('banners.index'), compact('categories'))->withInput($request->flash());
+
+        $currentCategory = $categories->where('id', $request->banner_group_id)->first();
+
+        return view(Banner::theme('banners.index'), compact('categories', 'currentCategory'))->withInput($request->flash());
     }
 
     /**

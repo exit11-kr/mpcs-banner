@@ -39,6 +39,7 @@
 {{-- CRUD 모달 폼 영역 --}}
 @section('crud_form')
 
+
     {{-- 생성 --}}
     @component(Bootstrap5::theme('components.modal_crud_create'), ['modalSize' => 'modal-fullscreen'])
         {!! Form::open()->idPrefix('create_')->attrs(['class' => 'h-100']) !!}
@@ -61,6 +62,10 @@
 
     {{-- 삭제 --}}
     @component(Bootstrap5::theme('components.modal_crud_delete'))
+    @endcomponent
+
+    {{-- Cropper --}}
+    @component(Bootstrap5::theme('components.modal_cropper_editor'))
     @endcomponent
 
 @endsection
