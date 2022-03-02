@@ -33,4 +33,18 @@ class BannerRequest extends FormRequest
 
         return $rules[$this->method()] ?? [];
     }
+
+    /**
+     * Get custom attributes for validator errors.
+     *
+     * @return array
+     */
+    public function attributes()
+    {
+        return [
+            'period_to' => trans('mpcs-banner::word.attr.period_to'),
+            'period_from' => trans('mpcs-banner::word.attr.period_from'),
+            'title' => trans('mpcs-banner::word.attr.title'),
+        ];
+    }
 }
