@@ -65,15 +65,15 @@
                     {{ trans('mpcs-banner::word.attr.image') }}
                     <button type="button" class="btn p-0" data-bs-container="body" data-bs-toggle="popover"
                         data-bs-placement="top" title="이미지 규격"
-                        data-bs-content="{{ $currentCategory->width }}px * {{ $currentCategory->height }}px 이미지 사이즈에 최적화 되어 있습니다.">
+                        data-bs-content="{{ $currentGroup->width }}px * {{ $currentGroup->height }}px 이미지 사이즈에 최적화 되어 있습니다.">
                         <i class="mdi mdi-information"></i>
                     </button>
                 </label>
                 <div class="col-auto">
                     <button type="button" class="btn btn-info align-middle btn-select"
-                        data-width="{{ $currentCategory->width }}" data-height="{{ $currentCategory->height }}">
+                        data-width="{{ $currentGroup->width }}" data-height="{{ $currentGroup->height }}">
                         <i class="mdi mdi-cloud-upload me-1"></i>
-                        {{ trans('mpcs-banner::word.attr.choose_a_image_file') }}
+                        {{ trans('ui-bootstrap5::word.button.choose_a_image_file') }}
                     </button>
                 </div>
             </div>

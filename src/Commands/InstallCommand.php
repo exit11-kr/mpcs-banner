@@ -40,6 +40,12 @@ class InstallCommand extends Command
         if (!app()->environment(['production'])) {
             if ($this->confirm($confirmMessage)) {
 
+                // publish
+                $this->call('vendor:publish', [
+                    '--provider' => 'Exit11\Banner\BannerServiceProvider',
+                    '--force' => $this->isForce
+                ]);
+
                 $this->call('db:seed', ['--class' => "Exit11\Banner\Seeds\BannerInstallSeeder"]);
 
                 $this->line('<info>Inserted Banner Permission</info>');

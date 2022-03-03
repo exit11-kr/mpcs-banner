@@ -3,7 +3,6 @@
 return [
     'attr' => [
         'code'                  => '코드',
-        'choose_a_image_file'   => '이미지 파일 선택',
         'url'                   => '링크주소',
         'order'                 => '순서',
         'type'                  => '타입',

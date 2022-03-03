@@ -11,7 +11,11 @@
 
 {{-- 사이트메뉴 인클루드 --}}
 @section('aside_left_nav')
-    @include(Banner::theme('banners.partials.list_categories'), ['datas' => $categories])
+    {{-- blade-formatter-disable-next-line --}}
+    @include(
+    Banner::theme('banners.partials.list_groups'),[
+    'datas' => $groups,
+    ])
 @endsection
 
 
@@ -43,14 +47,18 @@
     {{-- 생성 --}}
     @component(Bootstrap5::theme('components.modal_crud_create'), ['modalSize' => 'modal-fullscreen'])
         {!! Form::open()->idPrefix('create_')->attrs(['class' => 'h-100']) !!}
-        @include(Banner::theme('banners.partials.form'), ['idPrefix' => 'create_'])
+        @include(Banner::theme('banners.partials.form'), [
+            'idPrefix' => 'create_',
+        ])
         {!! Form::close() !!}
     @endcomponent
 
     {{-- 수정 --}}
     @component(Bootstrap5::theme('components.modal_crud_edit'), ['modalSize' => 'modal-fullscreen'])
         {!! Form::open()->idPrefix('edit_')->method('put')->attrs(['class' => 'h-100']) !!}
-        @include(Banner::theme('banners.partials.form'), ['idPrefix' => 'edit_'])
+        @include(Banner::theme('banners.partials.form'), [
+            'idPrefix' => 'edit_',
+        ])
         {!! Form::close() !!}
     @endcomponent
 
@@ -69,20 +77,6 @@
     @endcomponent
 
 @endsection
-
-
-
-{{-- 스크립트 템플릿 --}}
-@push('header_script')
-
-    {{-- 파일업로드 --}}
-    @component(Bootstrap5::theme('components.script_file_uploader'))
-    @endcomponent
-
-    {{-- 보기 : 카테고리, 첨부파일 --}}
-    @component(Banner::theme('banners.partials.script_templates'))
-    @endcomponent
-@endpush
 
 
 @push('after_app_src_scripts')

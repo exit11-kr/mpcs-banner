@@ -17,7 +17,10 @@ class BannerGroup extends Model
     protected $guarded = ['id'];
     public $appends = ['type_str'];
     // $sortable 정의시 정렬기능을 제공할 필드는 필수 기입
-    public $sortable = ['id', 'name', 'is_visible'];
+    public $sortable = ['id', 'order', 'is_visible'];
+    public $defaultSortable = [
+        'id' => 'asc',
+    ];
 
     protected static $m_params = [];
 

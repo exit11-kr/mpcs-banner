@@ -2,8 +2,7 @@
 
 return [
     'attr' => [
-        'code'                  => 'code',
-        'choose_a_image_file'   => 'Choose a image file',
+        'code'                  => 'Code',
         'url'                   => 'Url',
         'order'                 => 'Order',
         'type'                  => 'Type',
@@ -21,8 +20,8 @@ return [
         'writer'                => 'Writer',
         'background_color'      => 'Background color',
         'image'                 => 'Image',
-        'image_width'           => '이미지 가로사이즈(px)',
-        'image_height'          => '이미지 높이사이즈(px)',
+        'image_width'           => 'Image width(px)',
+        'image_height'          => 'Image Height(px)',
     ],
     'is_target_title'       => 'Link address, new window is open.',
     'target_self'           => 'Self',
