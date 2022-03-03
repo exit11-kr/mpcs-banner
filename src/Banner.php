@@ -18,13 +18,16 @@ class Banner
         return 'mpcs-banner::' . $viewTemplate . '.' . $view;
     }
 
+
     /**
-     * noImage
+     * perPage
      *
+     * @param  mixed $configString
+     * @param  mixed $default
      * @return void
      */
-    public static function noImage()
+    public static function getPerPage()
     {
-        return Bootstrap5::noImage();
+        return config('mpcsbanner.per_page') ?? 15;
     }
 }

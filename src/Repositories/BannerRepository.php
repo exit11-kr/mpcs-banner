@@ -35,7 +35,7 @@ class BannerRepository implements BannerRepositoryInterface
     public function all()
     {
         $model = $this->model::search()->sortable(["order" => "asc"]);
-        return $model->with($this->model::getDefaultLoadRelations())->paging();
+        return $model->with($this->model::getDefaultLoadRelations())->paging()->onEachSide(2);
     }
 
     // create a new record in the database

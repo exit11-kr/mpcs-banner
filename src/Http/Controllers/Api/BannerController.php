@@ -9,6 +9,7 @@ use Exit11\Banner\Http\Requests\BannerRequest as Request;
 use Exit11\Banner\Services\BannerService as Service;
 use Exit11\Banner\Models\Banner as Model;
 use Mpcs\Core\Facades\Core;
+use Exit11\Banner\Facades\Banner as Facade;
 use Exit11\Banner\Http\Resources\Banner as Resource;
 use Exit11\Banner\Http\Resources\BannerCollection as ResourceCollection;
 
@@ -30,7 +31,8 @@ class BannerController extends Controller
      */
     public function index(Request $request)
     {
-        $this->addOption('_is_paging', false);
+        // 모델 조회시 옵션설정(페이징여부, 검색조건)
+        $this->addOption('_per_page', Facade::getPerPage());
         $this->addOption('sort', ["order" => "desc"]);
         return new ResourceCollection($this->service->index());
     }
