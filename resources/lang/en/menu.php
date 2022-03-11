@@ -1,7 +1,6 @@
 <?php
 
 return [
-    'article_categories' => 'Banner categories',
-    'articles' => 'Banners',
-    'popups' => 'Popups',
+    'banner_groups' => 'Banner groups',
+    'banners' => 'Banners',
 ];

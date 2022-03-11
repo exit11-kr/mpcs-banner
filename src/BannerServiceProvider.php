@@ -26,7 +26,6 @@ class BannerServiceProvider extends ServiceProvider
         /* 콘솔에서 vendor:publish 가동시 설치 파일 */
         if ($this->app->runningInConsole()) {
             $this->loadMigrationsFrom(__DIR__ . '/../database/migrations');
-            $this->publishes([__DIR__ . '/../config' => config_path()], 'config');
         }
 
         /* 라우터, 다국어 */
@@ -45,6 +44,9 @@ class BannerServiceProvider extends ServiceProvider
      */
     public function register()
     {
+        // config
+        $this->mergeConfigFrom(__DIR__ . '/../config/mpcsbanner.php', 'mpcsbanner');
+
         $this->commands($this->commands);
         $this->registerEloquentFactoriesFrom(__DIR__ . '/../database/factories');
         $this->app->bind('Exit11\Banner\Repositories\BannerGroupRepositoryInterface', 'Exit11\Banner\Repositories\BannerGroupRepository');
