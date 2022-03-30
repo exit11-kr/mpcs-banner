@@ -85,7 +85,7 @@ class Banner extends Model implements Orderable
      */
     public function user()
     {
-        return $this->belongsTo('Mpcs\Core\Models\User', 'user_id');
+        return $this->belongsTo('App\Models\User', 'user_id');
     }
 
     /**

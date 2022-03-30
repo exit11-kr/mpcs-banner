@@ -6,7 +6,7 @@
 
 use Exit11\Banner\Models\Banner;
 use Exit11\Banner\Models\BannerGroup;
-use Mpcs\Core\Models\User;
+use App\Models\User;
 
 use Faker\Generator as Faker;
 

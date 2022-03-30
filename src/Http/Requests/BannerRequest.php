@@ -9,14 +9,13 @@ class BannerRequest extends FormRequest
 {
     use RequestTrait;
 
-    public function rules()
+    public function rules($params = null)
     {
-        $rules = $this->getRequestRules();
-        if ($rules != null) {
-            return $rules;
+        $info = $this->getRequestInfo($params);
+        if ($info->rules) {
+            return $info->rules;
         }
 
-        $id = $this->banner->id ?? "";
         $rules = [
             'POST' => [
                 'banner_group_id' => 'required|integer',

@@ -2,7 +2,6 @@
 
 namespace Exit11\Banner\Http\Requests;
 
-use Illuminate\Validation\Rule;
 use Mpcs\Core\Traits\RequestTrait;
 use Illuminate\Foundation\Http\FormRequest;
 
@@ -10,12 +9,13 @@ class BannerGroupRequest extends FormRequest
 {
     use RequestTrait;
 
-    public function rules()
+    public function rules($params = null)
     {
-        $rules = $this->getRequestRules();
-        if ($rules != null) {
-            return $rules;
+        $info = $this->getRequestInfo($params);
+        if ($info->rules) {
+            return $info->rules;
         }
+
         $id = $this->banner_group->id ?? "";
         $rules = [
             'POST' => [

@@ -4,6 +4,7 @@ namespace Exit11\Banner;
 
 use Illuminate\Support\ServiceProvider;
 use Illuminate\Database\Eloquent\Factory as EloquentFactory;
+use Mpcs\Core\Facades\Core;
 
 class BannerServiceProvider extends ServiceProvider
 {
@@ -35,6 +36,8 @@ class BannerServiceProvider extends ServiceProvider
             $this->loadTranslationsFrom(__DIR__ . '/../resources/lang', 'mpcs-banner');
             $this->loadRoutesFrom(__DIR__ . '/../routes/web.php');
         });
+
+        Core::setPackageModelVendors(__NAMESPACE__, __DIR__);
     }
 
     /**

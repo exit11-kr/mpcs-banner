@@ -27,8 +27,6 @@ class BannerAuthServiceProvider extends ServiceProvider
      */
     public function boot()
     {
-        // Auth
-        Auth::shouldUse(Core::getConfig('auth_guard'));
         $this->registerPolicies();
     }
 }
