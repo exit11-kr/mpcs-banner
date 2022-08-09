@@ -1,9 +1,9 @@
 <?php
 
-namespace Exit11\Banner\Policies;
+namespace Mpcs\Banner\Policies;
 
 use App\Models\User;
-use Exit11\Banner\Models\Banner as Model;
+use Mpcs\Banner\Models\Banner as Model;
 use Illuminate\Auth\Access\HandlesAuthorization;
 use Mpcs\Core\Facades\Core;
 

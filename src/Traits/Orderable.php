@@ -1,6 +1,6 @@
 <?php
 
-namespace Exit11\Banner\Traits;
+namespace Mpcs\Banner\Traits;
 
 use Illuminate\Database\Eloquent\Builder;
 

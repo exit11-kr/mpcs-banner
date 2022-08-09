@@ -1,12 +1,12 @@
 <?php
 
-namespace Exit11\Banner\Models;
+namespace Mpcs\Banner\Models;
 
-use Exit11\Banner\Facades\Banner as Facade;
+use Mpcs\Banner\Facades\Banner as Facade;
 use Illuminate\Database\Eloquent\Model;
 use Mpcs\Core\Traits\ModelTrait;
-use MpcsUi\Bootstrap5\Traits\Orderable;
-use MpcsUi\Bootstrap5\Traits\OrderableTrait;
+use Mpcs\Bootstrap5\Traits\Orderable;
+use Mpcs\Bootstrap5\Traits\OrderableTrait;
 use Illuminate\Support\Carbon;
 use Illuminate\Support\Facades\Storage;
 

@@ -6,14 +6,14 @@
 ### composer-dev.json
 {
     "require": {
-        "exit11/banner": "dev-develop"
+        "mpcs/banner": "dev-develop"
     },
 
     "repositories": [
         {
-            "name": "exit11/banner",
+            "name": "mpcs/banner",
             "type": "path",
-            "url": "packages/exit11/banner"
+            "url": "packages/mpcs/banner"
         }
     ]
 
@@ -24,9 +24,9 @@
 
     "repositories": [
         {
-            "name": "exit11/banner",
+            "name": "mpcs/banner",
             "type": "vcs",
-            "url": "git@github.com:exit11/mpcs-banner.git"
+            "url": "git@github.com:mpcs/mpcs-banner.git"
         }
     ]
 
@@ -38,12 +38,12 @@
 
 ### 패키지 개발 설치시
 
-git clone https://github.com/exit11/mpcs-banner.git .\packages\exit11\banner
-env COMPOSER=composer-dev.json composer require exit11/banner --dev
+git clone https://github.com/mpcs/mpcs-banner.git .\packages\mpcs\banner
+env COMPOSER=composer-dev.json composer require mpcs/banner --dev
 
 ### 프로젝트 설치시
 
-composer require exit11/banner
+composer require mpcs/banner
 
 ### 설치 후 실행
 php .\artisan mpcs-banner:install

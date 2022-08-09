@@ -1,12 +1,12 @@
 <?php
 
-namespace Exit11\Banner\Http\Controllers\Blade;
+namespace Mpcs\Banner\Http\Controllers\Blade;
 
 use Mpcs\Core\Facades\Core;
-use Exit11\Banner\Facades\Banner;
-use Exit11\Banner\Http\Controllers\Api\BannerGroupController as Controller;
-use Exit11\Banner\Http\Requests\BannerGroupRequest as Request;
-use Exit11\Banner\Models\BannerGroup as Model;
+use Mpcs\Banner\Facades\Banner;
+use Mpcs\Banner\Http\Controllers\Api\BannerGroupController as Controller;
+use Mpcs\Banner\Http\Requests\BannerGroupRequest as Request;
+use Mpcs\Banner\Models\BannerGroup as Model;
 
 class BannerGroupController extends Controller
 {

@@ -1,6 +1,6 @@
 <?php
 
-namespace Exit11\Banner\Facades;
+namespace Mpcs\Banner\Facades;
 
 use Illuminate\Support\Facades\Facade;
 
@@ -8,6 +8,6 @@ class Banner extends Facade
 {
     protected static function getFacadeAccessor()
     {
-        return \Exit11\Banner\Banner::class;
+        return \Mpcs\Banner\Banner::class;
     }
 }

@@ -1,8 +1,8 @@
 <?php
 
-namespace Exit11\Banner\Repositories;
+namespace Mpcs\Banner\Repositories;
 
-use Exit11\Banner\Models\BannerGroup as Model;
+use Mpcs\Banner\Models\BannerGroup as Model;
 use Mpcs\Core\Traits\RepositoryTrait;
 
 class BannerGroupRepository implements BannerGroupRepositoryInterface

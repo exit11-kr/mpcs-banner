@@ -4,7 +4,7 @@
  * @var \Illuminate\Database\Eloquent\Factory $factory 
  **/
 
-use Exit11\Banner\Models\BannerGroup;
+use Mpcs\Banner\Models\BannerGroup;
 use Illuminate\Support\Arr;
 
 use Faker\Generator as Faker;

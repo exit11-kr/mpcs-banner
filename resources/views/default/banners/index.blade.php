@@ -80,7 +80,7 @@
 
 
 @push('after_app_src_scripts')
-    <script src="/vendor/mpcs-ui/bootstrap5/js/crud.js"></script>
+    <script src="/vendor/mpcs/bootstrap5/js/crud.js"></script>
 @endpush
 
 {{-- CURD 스크립트 추가 --}}

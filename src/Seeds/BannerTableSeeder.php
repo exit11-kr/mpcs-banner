@@ -1,12 +1,12 @@
 <?php
 
-namespace Exit11\Banner\Seeds;
+namespace Mpcs\Banner\Seeds;
 
 use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\DB;
 
-use Exit11\Banner\Models\Banner;
-use Exit11\Banner\Models\BannerGroup;
+use Mpcs\Banner\Models\Banner;
+use Mpcs\Banner\Models\BannerGroup;
 
 class BannerTableSeeder extends Seeder
 {

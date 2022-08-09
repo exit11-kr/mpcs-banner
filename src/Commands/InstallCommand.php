@@ -1,6 +1,6 @@
 <?php
 
-namespace Exit11\Banner\Commands;
+namespace Mpcs\Banner\Commands;
 
 use Illuminate\Console\Command;
 
@@ -42,11 +42,11 @@ class InstallCommand extends Command
 
                 // publish
                 $this->call('vendor:publish', [
-                    '--provider' => 'Exit11\Banner\BannerServiceProvider',
+                    '--provider' => 'Mpcs\Banner\BannerServiceProvider',
                     '--force' => $this->isForce
                 ]);
 
-                $this->call('db:seed', ['--class' => "Exit11\Banner\Seeds\BannerInstallSeeder"]);
+                $this->call('db:seed', ['--class' => "Mpcs\Banner\Seeds\BannerInstallSeeder"]);
 
                 $this->line('<info>Inserted Banner Permission</info>');
                 $this->call('cache:clear');

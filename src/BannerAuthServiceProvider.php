@@ -1,9 +1,9 @@
 <?php
 
-namespace Exit11\Banner;
+namespace Mpcs\Banner;
 
-use Exit11\Banner\Models;
-use Exit11\Banner\Policies;
+use Mpcs\Banner\Models;
+use Mpcs\Banner\Policies;
 use Mpcs\Core\Facades\Core;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Foundation\Support\Providers\AuthServiceProvider as ServiceProvider;

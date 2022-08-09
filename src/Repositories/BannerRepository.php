@@ -1,13 +1,13 @@
 <?php
 
-namespace Exit11\Banner\Repositories;
+namespace Mpcs\Banner\Repositories;
 
 use Exception;
 use Mpcs\Core\Facades\Core;
-use Exit11\Banner\Models\Banner as Model;
+use Mpcs\Banner\Models\Banner as Model;
 use Mpcs\Core\Traits\RepositoryTrait;
 use Illuminate\Support\Facades\DB;
-use MpcsUi\Bootstrap5\Facades\Bootstrap5;
+use Mpcs\Bootstrap5\Facades\Bootstrap5;
 
 class BannerRepository implements BannerRepositoryInterface
 {

@@ -1,9 +1,9 @@
 <?php
 
-namespace Exit11\Banner\Services;
+namespace Mpcs\Banner\Services;
 
 use Mpcs\Core\Facades\Core;
-use Exit11\Banner\Repositories\BannerRepositoryInterface as RepositoryInterface;
+use Mpcs\Banner\Repositories\BannerRepositoryInterface as RepositoryInterface;
 use Mpcs\Core\Traits\ServiceTrait;
 
 class BannerService

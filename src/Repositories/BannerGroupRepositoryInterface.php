@@ -1,6 +1,6 @@
 <?php
 
-namespace Exit11\Banner\Repositories;
+namespace Mpcs\Banner\Repositories;
 
 interface BannerGroupRepositoryInterface
 {

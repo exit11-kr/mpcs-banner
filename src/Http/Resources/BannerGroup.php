@@ -1,6 +1,6 @@
 <?php
 
-namespace Exit11\Banner\Http\Resources;
+namespace Mpcs\Banner\Http\Resources;
 
 use Illuminate\Http\Resources\Json\JsonResource;
 use Mpcs\Core\Traits\ResourceTrait;

@@ -1,6 +1,6 @@
 <?php
 
-namespace Exit11\Banner;
+namespace Mpcs\Banner;
 
 use Illuminate\Foundation\Support\Providers\EventServiceProvider as ServiceProvider;
 

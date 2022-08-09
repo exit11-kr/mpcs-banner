@@ -1,6 +1,6 @@
 <?php
 
-namespace Exit11\Banner\Commands;
+namespace Mpcs\Banner\Commands;
 
 use Illuminate\Console\Command;
 
@@ -27,7 +27,7 @@ class SeedCommand extends Command
 
         if (!app()->environment(['production'])) {
             if ($this->confirm($confirmMessage)) {
-                $this->call('db:seed', ['--class' => "Exit11\Banner\Seeds\BannerTableSeeder"]);
+                $this->call('db:seed', ['--class' => "Mpcs\Banner\Seeds\BannerTableSeeder"]);
             }
         } else {
             $this->error('운영환경에서는 실행할 수 없습니다.');

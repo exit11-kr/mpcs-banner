@@ -1,12 +1,12 @@
 <?php
 
-namespace Exit11\Banner\Models;
+namespace Mpcs\Banner\Models;
 
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
 use Mpcs\Core\Traits\ModelTrait;
 
-use Exit11\Banner\Facades\Banner;
+use Mpcs\Banner\Facades\Banner;
 
 class BannerGroup extends Model
 {

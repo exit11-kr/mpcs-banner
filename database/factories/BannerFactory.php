@@ -4,13 +4,13 @@
  * @var \Illuminate\Database\Eloquent\Factory $factory 
  **/
 
-use Exit11\Banner\Models\Banner;
-use Exit11\Banner\Models\BannerGroup;
+use Mpcs\Banner\Models\Banner;
+use Mpcs\Banner\Models\BannerGroup;
 use App\Models\User;
 
 use Faker\Generator as Faker;
 
-use MpcsUi\Bootstrap5\Bootstrap5;
+use Mpcs\Bootstrap5\Bootstrap5;
 use Illuminate\Support\Arr;
 use Illuminate\Support\Str;
 use Intervention\Image\ImageManager;

@@ -1,17 +1,17 @@
 <?php
 
-namespace Exit11\Banner\Http\Controllers\Api;
+namespace Mpcs\Banner\Http\Controllers\Api;
 
 use App\Http\Controllers\Controller;
 
 use Mpcs\Core\Traits\ControllerTrait;
 use Mpcs\Core\Facades\Core;
 
-use Exit11\Banner\Http\Requests\BannerGroupRequest as Request;
-use Exit11\Banner\Services\BannerGroupService as Service;
-use Exit11\Banner\Models\BannerGroup as Model;
-use Exit11\Banner\Http\Resources\BannerGroup as Resource;
-use Exit11\Banner\Http\Resources\BannerGroupCollection as ResourceCollection;
+use Mpcs\Banner\Http\Requests\BannerGroupRequest as Request;
+use Mpcs\Banner\Services\BannerGroupService as Service;
+use Mpcs\Banner\Models\BannerGroup as Model;
+use Mpcs\Banner\Http\Resources\BannerGroup as Resource;
+use Mpcs\Banner\Http\Resources\BannerGroupCollection as ResourceCollection;
 
 class BannerGroupController extends Controller
 {

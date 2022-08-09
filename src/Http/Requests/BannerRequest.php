@@ -1,6 +1,6 @@
 <?php
 
-namespace Exit11\Banner\Http\Requests;
+namespace Mpcs\Banner\Http\Requests;
 
 use Illuminate\Foundation\Http\FormRequest;
 use Mpcs\Core\Traits\RequestTrait;

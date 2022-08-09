@@ -1,6 +1,6 @@
 <?php
 
-namespace Exit11\Banner;
+namespace Mpcs\Banner;
 
 use Illuminate\Support\ServiceProvider;
 use Illuminate\Support\Facades\Broadcast;

@@ -1,6 +1,6 @@
 <?php
 
-namespace Exit11\Banner\Seeds;
+namespace Mpcs\Banner\Seeds;
 
 use Illuminate\Database\Seeder;
 

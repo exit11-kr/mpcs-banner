@@ -1,11 +1,11 @@
 <?php
 
-namespace Exit11\Banner\Http\Controllers\Blade;
+namespace Mpcs\Banner\Http\Controllers\Blade;
 
 use Mpcs\Core\Facades\Core;
-use Exit11\Banner\Http\Controllers\Api\BannerController as Controller;
-use Exit11\Banner\Http\Requests\BannerRequest as Request;
-use Exit11\Banner\Facades\Banner as Facade;
+use Mpcs\Banner\Http\Controllers\Api\BannerController as Controller;
+use Mpcs\Banner\Http\Requests\BannerRequest as Request;
+use Mpcs\Banner\Facades\Banner as Facade;
 
 class BannerController extends Controller
 {
@@ -17,7 +17,7 @@ class BannerController extends Controller
      */
     public function index(Request $request)
     {
-        $groups = Core::dataSelect('banner_groups', ['_vendor' => 'Exit11\Banner', 'is_visible' => true]);
+        $groups = Core::dataSelect('banner_groups', ['_vendor' => 'Mpcs\Banner', 'is_visible' => true]);
 
         // 그룹이 형성되지 않았을 경우
         if ($groups->count() == 0) {

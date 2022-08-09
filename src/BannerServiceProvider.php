@@ -1,6 +1,6 @@
 <?php
 
-namespace Exit11\Banner;
+namespace Mpcs\Banner;
 
 use Illuminate\Support\ServiceProvider;
 use Illuminate\Database\Eloquent\Factory as EloquentFactory;
@@ -52,8 +52,8 @@ class BannerServiceProvider extends ServiceProvider
 
         $this->commands($this->commands);
         $this->registerEloquentFactoriesFrom(__DIR__ . '/../database/factories');
-        $this->app->bind('Exit11\Banner\Repositories\BannerGroupRepositoryInterface', 'Exit11\Banner\Repositories\BannerGroupRepository');
-        $this->app->bind('Exit11\Banner\Repositories\BannerRepositoryInterface', 'Exit11\Banner\Repositories\BannerRepository');
+        $this->app->bind('Mpcs\Banner\Repositories\BannerGroupRepositoryInterface', 'Mpcs\Banner\Repositories\BannerGroupRepository');
+        $this->app->bind('Mpcs\Banner\Repositories\BannerRepositoryInterface', 'Mpcs\Banner\Repositories\BannerRepository');
     }
 
     /**
