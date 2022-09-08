@@ -4,14 +4,15 @@
             data-bs-toggle="dropdown">
             배너 그룹
         </button>
-        <div class="list-group mb-2">
+        <div id="asideNavCategory" class="list-group mb-2">
             <h6 class="dropdown-header d-none">배너 그룹</h6>
             @forelse ($groups as $menu)
-                <a href="{{ route(Bootstrap5::routePrefix() . '.banners.index', ['banner_group_id' => $menu->id]) }}"
+                <button type="button" data-list-param="banner_group_id" data-list-title="{{ $menu->name }}"
+                    data-list-value="{{ $menu->id }}"
                     class="list-group-item list-group-item-action d-flex justify-content-between {{ Bootstrap5::setActiveNav('banners?banner_group_id=' . $menu->id) }}">
                     {{ $menu->name }}
                     <span class="badge bg-light badge-pill text-primary">{{ $menu->type_str }}</span>
-                </a>
+                </button>
             @empty
             @endforelse
         </div>

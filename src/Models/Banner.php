@@ -2,7 +2,7 @@
 
 namespace Mpcs\Banner\Models;
 
-use Mpcs\Banner\Facades\Banner as Facade;
+use Mpcs\Bootstrap5\Facades\Bootstrap5;
 use Illuminate\Database\Eloquent\Model;
 use Mpcs\Core\Traits\ModelTrait;
 use Mpcs\Bootstrap5\Traits\Orderable;
@@ -172,6 +172,6 @@ class Banner extends Model implements Orderable
         if ($this->image) {
             return $this->upload_disk->url($this->image_root_dir . '/' . $this->image);
         }
-        return Facade::noImage();
+        return Bootstrap5::noImage();
     }
 }

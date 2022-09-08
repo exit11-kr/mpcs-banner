@@ -73,8 +73,8 @@
                     <div class="row no-gutters align-items-center">
                         @if ($data->image)
                             <div class="col-auto mr-2">
-                                <button type="button" class="btn p-0" data-bs-toggle="popover"
-                                    data-bs-html="true" data-bs-content='<img class="img-fluid"
+                                <button type="button" class="btn p-0" data-bs-toggle="popover" data-bs-html="true"
+                                    data-bs-content='<img class="img-fluid"
                                 src="{{ $data->image_file_url }}" alt="{{ $data->title }}">'>
                                     <img class="img-thumbnail" style="width: 40px; height: 40px;"
                                         src="{{ $data->image_file_url }}" alt="{{ $data->title }}">
@@ -97,7 +97,7 @@
                 </td>
                 <td data-name='status_released' class="text-start text-md-center d-block d-md-table-cell">
                     <span class="badge bg-{{ $data->status_released ? 'success' : 'warning' }}">
-                        {{ $data->status_released? trans('mpcs-article::word.attr.released'): trans('mpcs-article::word.attr.nonrelease') }}
+                        {{ $data->status_released ? trans('mpcs-article::word.attr.released') : trans('mpcs-article::word.attr.nonrelease') }}
                     </span>
                 </td>
                 <td class="d-block d-md-table-cell text-end text-md-center">
@@ -113,7 +113,7 @@
             </tr>
         @empty
             <tr>
-                <td colspan="6" class="text-center">{{ trans('ui-bootstrap5::word.crud.none_data') }}</td>
+                <td colspan="8" class="text-center">{{ trans('ui-bootstrap5::word.crud.none_data') }}</td>
             </tr>
         @endforelse
     </tbody>

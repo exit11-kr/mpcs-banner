@@ -5,6 +5,7 @@ namespace Mpcs\Banner\Seeds;
 use Illuminate\Database\Seeder;
 
 use Mpcs\Core\Models\Permission;
+use Mpcs\Banner\Models\BannerGroup;
 
 class BannerInstallSeeder extends Seeder
 {
@@ -113,6 +114,22 @@ class BannerInstallSeeder extends Seeder
                 'is_visible'  => 1,
                 'created_at'  => date("Y-m-d H:i:s"),
                 'updated_at'  => date("Y-m-d H:i:s"),
+            ],
+        ]);
+
+        // 메인페이지 팝업 생성
+        BannerGroup::insertOrIgnore([
+            [
+                'name'        => 'Main Popup',
+                'code'        => 'main_popup',
+                'description' => 'Mainpage Popup',
+                'type'        => 1,
+                'width'       => 400,
+                'height'      => 600,
+                'is_visible'  => 1,
+                'created_at'  => date("Y-m-d H:i:s"),
+                'updated_at'  => date("Y-m-d H:i:s"),
+                'deleted_at'  => null,
             ],
         ]);
     }

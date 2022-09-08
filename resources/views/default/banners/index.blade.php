@@ -7,7 +7,7 @@
 @section('crud_subtitle', trans('mpcs-banner::menu.banners'))
 
 {{-- 목록 타이틀 --}}
-{{-- @section('crud_list_title', Banner::menuTitle('mpcs-article::menu.banners', config('mpcsarticle.list_title.banners'))) --}}
+@section('crud_list_title', $currentGroup->name)
 
 {{-- 사이트메뉴 인클루드 --}}
 @section('aside_left_nav')
@@ -29,7 +29,7 @@
 
 {{-- 헤더 버튼 그룹 --}}
 @section('crud_button_group')
-    <button class="btn-crud-create btn btn-primary font-weight-bold"><i class="mdi mdi-account-plus mr-1"></i>
+    <button class="btn-crud-create btn btn-primary font-weight-bold"><i class="mdi mdi-plus mr-1"></i>
         {{ Str::title(trans('ui-bootstrap5::word.create')) }}</button>
 @endsection
 
