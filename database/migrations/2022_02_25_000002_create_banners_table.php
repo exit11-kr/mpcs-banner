@@ -15,7 +15,7 @@ class CreateBannersTable extends Migration
     {
         Schema::create('banners', function (Blueprint $table) {
             $table->increments('id');
-            $table->smallInteger('banner_group_id');
+            $table->unsignedSmallInteger('banner_group_id');
             $table->integer('order')->unsigned()->default(1);
             $table->string('title', 100);
             $table->text('content')->nullable();

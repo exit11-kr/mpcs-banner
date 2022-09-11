@@ -14,7 +14,7 @@ class CreateBannerGroupsTable extends Migration
     public function up()
     {
         Schema::create('banner_groups', function (Blueprint $table) {
-            $table->increments('id');
+            $table->smallIncrements('id');
             $table->string('name', 100);
             $table->string('code', 50)->unique();
             $table->text('description')->nullable();
