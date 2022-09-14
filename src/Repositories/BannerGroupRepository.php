@@ -4,6 +4,7 @@ namespace Mpcs\Banner\Repositories;
 
 use Mpcs\Banner\Models\BannerGroup as Model;
 use Mpcs\Core\Traits\RepositoryTrait;
+use Illuminate\Support\Str;
 
 class BannerGroupRepository implements BannerGroupRepositoryInterface
 {
@@ -36,7 +37,7 @@ class BannerGroupRepository implements BannerGroupRepositoryInterface
     public function create()
     {
         $this->model->name = $this->request['name'];
-        $this->model->code = $this->request['code'];
+        $this->model->code = Str::lower($this->request['code']);
         $this->model->description = $this->request['description'] ?? null;
         $this->model->type = $this->request['type'];
         $this->model->width = $this->request['width'] ?? null;
@@ -51,7 +52,7 @@ class BannerGroupRepository implements BannerGroupRepositoryInterface
     public function update($model)
     {
         $model->name = $this->request['name'];
-        $model->code = $this->request['code'];
+        $model->code = Str::lower($this->request['code']);
         $model->description = $this->request['description'] ?? null;
         $model->type = $this->request['type'];
         $model->width = $this->request['width'];
