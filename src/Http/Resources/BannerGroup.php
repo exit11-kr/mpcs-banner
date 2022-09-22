@@ -22,6 +22,7 @@ class BannerGroup extends JsonResource
             'name' => $this->name,
             'code' => $this->code,
             'description' => $this->description,
+            'type' => $this->type,
             'type_str' => $this->type_str,
             'width' => $this->width,
             'height' => $this->height,

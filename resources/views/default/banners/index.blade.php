@@ -15,6 +15,7 @@
     @include(
     Banner::theme('banners.partials.list_groups'),[
     'datas' => $groups,
+    'currentGroupId' => $currentGroup->id,
     ])
 @endsection
 
@@ -88,7 +89,7 @@
     <script>
         window.CRUD.init(undefined, {
             initListParams: {
-                'banner_group_id': '{{ request()->get('banner_group_id') }}',
+                'banner_group_id': '{{ $currentGroup->id }}',
             },
         });
     </script>

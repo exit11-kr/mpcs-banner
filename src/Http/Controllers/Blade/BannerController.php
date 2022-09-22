@@ -21,7 +21,7 @@ class BannerController extends Controller
 
         // 그룹이 형성되지 않았을 경우
         if ($groups->count() == 0) {
-            // 로그인페이지로 토스트메세지 전달
+            // 토스트메세지 전달
             Core::toast([
                 'message' => "Banner Group is not created. Please contact the administrator.",
                 'title' => "Banner Group is not created",
@@ -30,11 +30,10 @@ class BannerController extends Controller
             return redirect()->route(Core::getConfig('ui_route_name_prefix') . ".home");
         }
 
-        $currentGroup = $groups->where('id', $request->banner_group_id)->first();
-
-        // 그룹지정없이 들어올 경우 강제 리다이렉트
-        if (!$request->banner_group_id || !$currentGroup) {
-            return redirect()->route(Core::getConfig('ui_route_name_prefix') . '.banners.index', ['banner_group_id' => $groups->first()->id]);
+        if (!$request->banner_group_id) {
+            $currentGroup = $groups->where('id', $groups->first()->id)->first();
+        } else {
+            $currentGroup = $groups->where('id', $request->banner_group_id)->first();
         }
 
         return view(Facade::theme('banners.index'), compact('groups', 'currentGroup'))->withInput($request->flash());

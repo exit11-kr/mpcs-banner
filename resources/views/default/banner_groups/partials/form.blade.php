@@ -14,7 +14,7 @@
 {!! Form::text('name', Str::ucfirst(trans('ui-bootstrap5::word.name')))->placeholder(Str::ucfirst(trans('ui-bootstrap5::word.name')))->wrapperAttrs(['class' => 'required']) !!}
 {!! Form::text('code', Str::ucfirst(trans('mpcs-banner::word.attr.code')))->placeholder(Str::ucfirst(trans('mpcs-banner::word.attr.code')))->wrapperAttrs(['class' => 'required']) !!}
 
-{!! Form::select('type', Str::ucfirst(trans('mpcs-banner::word.attr.list_type')), $types)->attrs(['data-type' => 'select-one'])->wrapperAttrs(['class' => 'mb-3']) !!}
+{!! Form::select('type', Str::ucfirst(trans('mpcs-banner::word.attr.list_type')), $types)->attrs(['data-type' => 'select-one'])->wrapperAttrs(['class' => 'required mb-3']) !!}
 
 <div class="row">
     <div class="col">
@@ -25,4 +25,6 @@
     </div>
 </div>
 
-{!! Form::text('description', Str::ucfirst(trans('ui-bootstrap5::word.description')))->placeholder(Str::ucfirst(trans('ui-bootstrap5::word.description'))) !!}
+{!! Form::text('description', Str::ucfirst(trans('ui-bootstrap5::word.description')))->placeholder(
+    Str::ucfirst(trans('ui-bootstrap5::word.description')),
+) !!}
