@@ -19,8 +19,10 @@ class CreateBannerGroupsTable extends Migration
             $table->string('code', 50)->unique();
             $table->text('description')->nullable();
             $table->tinyInteger('type')->unsigned()->default(1);
-            $table->smallInteger('width')->unsigned()->nullable();
-            $table->smallInteger('height')->unsigned()->nullable();
+            $table->smallInteger('pc_width')->unsigned()->nullable();
+            $table->smallInteger('pc_height')->unsigned()->nullable();
+            $table->smallInteger('mobile_width')->unsigned()->nullable();
+            $table->smallInteger('mobile_height')->unsigned()->nullable();
             $table->boolean('is_visible')->default(0);
             $table->timestamps();
             $table->softDeletes();

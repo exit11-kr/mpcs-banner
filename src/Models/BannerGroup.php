@@ -6,8 +6,6 @@ use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
 use Mpcs\Core\Traits\ModelTrait;
 
-use Mpcs\Banner\Facades\Banner;
-
 class BannerGroup extends Model
 {
     use SoftDeletes, ModelTrait;
@@ -22,7 +20,9 @@ class BannerGroup extends Model
         'id' => 'asc',
     ];
 
-    protected static $m_params = [];
+    protected static $m_params = [
+        'default_load_relations' => ['banners'],
+    ];
 
     public static $typeStrings = [
         1 => 'popup',
@@ -49,7 +49,7 @@ class BannerGroup extends Model
      */
     public function banners()
     {
-        return $this->hasMany(Banner::class, 'banner_group_id');
+        return $this->hasMany(Banner::class, 'banner_group_id')->orderBy('order', 'asc');
     }
 
 

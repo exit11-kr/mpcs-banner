@@ -18,7 +18,7 @@ class Banner extends Model implements Orderable
     protected $dates = ['created_at', 'updated_at', 'deleted_at', 'period_from', 'period_to'];
     protected $guarded = ['id'];
     protected static $m_params = [
-        'default_load_relations' => ['user'],
+        'default_load_relations' => ['bannerGroup', 'user'],
         'column_maps' => [
             // date : {컬럼명}
             'from' => 'created_at',
@@ -53,7 +53,7 @@ class Banner extends Model implements Orderable
         parent::__construct($attributes);
 
         $this->uploadDisk = Storage::disk('upload');
-        $this->imageRootDir = 'popups';
+        $this->imageRootDir = 'banners';
     }
 
 
@@ -75,7 +75,7 @@ class Banner extends Model implements Orderable
      */
     public function bannerGroup()
     {
-        return $this->belongsTo('BannerGroup', 'banner_group_id');
+        return $this->belongsTo(BannerGroup::class, 'banner_group_id');
     }
 
     /**
@@ -163,14 +163,27 @@ class Banner extends Model implements Orderable
     }
 
     /**
-     * getFileUrlAttribute
+     * getPcImageFileUrlAttribute
      *
      * @return void
      */
-    public function getImageFileUrlAttribute()
+    public function getPcImageFileUrlAttribute()
     {
-        if ($this->image) {
-            return $this->upload_disk->url($this->image_root_dir . '/' . $this->image);
+        if ($this->pc_image) {
+            return $this->upload_disk->url($this->image_root_dir . '/' . $this->pc_image);
+        }
+        return Bootstrap5::noImage();
+    }
+
+    /**
+     * getMobileImageFileUrlAttribute
+     *
+     * @return void
+     */
+    public function getMobileImageFileUrlAttribute()
+    {
+        if ($this->mobile_image) {
+            return $this->upload_disk->url($this->image_root_dir . '/' . $this->mobile_image);
         }
         return Bootstrap5::noImage();
     }

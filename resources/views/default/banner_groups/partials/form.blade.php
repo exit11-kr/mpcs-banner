@@ -18,10 +18,19 @@
 
 <div class="row">
     <div class="col">
-        {!! Form::text('width', Str::ucfirst(trans('mpcs-banner::word.attr.image_width')))->type('number')->placeholder(Str::ucfirst(trans('mpcs-banner::word.attr.image_width'))) !!}
+        {!! Form::text('pc_width', Str::ucfirst(trans('mpcs-banner::word.attr.pc_image_width')))->type('number')->placeholder(Str::ucfirst(trans('mpcs-banner::word.attr.pc_image_width'))) !!}
     </div>
     <div class="col">
-        {!! Form::text('height', Str::ucfirst(trans('mpcs-banner::word.attr.image_height')))->type('number')->placeholder(Str::ucfirst(trans('mpcs-banner::word.attr.image_height'))) !!}
+        {!! Form::text('pc_height', Str::ucfirst(trans('mpcs-banner::word.attr.pc_image_height')))->type('number')->placeholder(Str::ucfirst(trans('mpcs-banner::word.attr.pc_image_height'))) !!}
+    </div>
+</div>
+
+<div class="row">
+    <div class="col">
+        {!! Form::text('mobile_width', Str::ucfirst(trans('mpcs-banner::word.attr.mobile_image_width')))->type('number')->placeholder(Str::ucfirst(trans('mpcs-banner::word.attr.mobile_image_width'))) !!}
+    </div>
+    <div class="col">
+        {!! Form::text('mobile_height', Str::ucfirst(trans('mpcs-banner::word.attr.mobile_image_height')))->type('number')->placeholder(Str::ucfirst(trans('mpcs-banner::word.attr.mobile_image_height'))) !!}
     </div>
 </div>
 

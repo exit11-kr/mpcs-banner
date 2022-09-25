@@ -1,5 +1,5 @@
 {!! Form::text('id')->type('hidden') !!}
-{!! Form::text('banner_group_id')->type('hidden')->attrs(['class' => 'disable-clear'])->value(request()->banner_group_id) !!}
+{!! Form::text('banner_group_id')->type('hidden')->attrs(['class' => 'disable-clear'])->value($currentGroup->id) !!}
 
 <div class="row h-100">
     <div class="col-12 col-sm-auto">
@@ -51,39 +51,71 @@
         </div>
 
         <div class="form-group">
-            <label>{{ Str::title(trans('mpcs-banner::word.attr.background_color')) }} </label>
+            <label>{{ Str::title(trans('mpcs-banner::word.attr.color')) }} </label>
             <div class="col border rounded p-2" data-type="color-picker">
-                <input type="hidden" name="background_color">
+                <input type="hidden" name="color">
             </div>
         </div>
     </div>
 
     <div class="col-12 col-sm">
         <div data-type="cropper-image-upload">
-            <div class="row">
-                <label for="image" class="col">
-                    {{ trans('mpcs-banner::word.attr.image') }}
-                    <button type="button" class="btn p-0" data-bs-container="body" data-bs-toggle="popover"
-                        data-bs-placement="top" title="이미지 규격"
-                        data-bs-content="{{ $currentGroup->width }}px * {{ $currentGroup->height }}px 이미지 사이즈에 최적화 되어 있습니다.">
-                        <i class="mdi mdi-information"></i>
-                    </button>
-                </label>
-                <div class="col-auto">
-                    <button type="button" class="btn btn-info align-middle btn-select"
-                        data-width="{{ $currentGroup->width }}" data-height="{{ $currentGroup->height }}">
-                        <i class="mdi mdi-cloud-upload me-1"></i>
-                        {{ trans('ui-bootstrap5::word.button.choose_a_image_file') }}
-                    </button>
+            <div class="panel-wrap mb-2">
+                <div class="panel-heading d-flex align-items-center justify-content-between">
+                    <label for="pc_image" class="col">
+                        {{ trans('mpcs-banner::word.attr.pc_image') }}
+                        <button type="button" class="btn p-0" data-bs-container="body" data-bs-toggle="popover"
+                            data-bs-placement="top" title="데스크탑 규격"
+                            data-bs-content="{{ $currentGroup->pc_width }}px * {{ $currentGroup->pc_height }}px 사이즈에 최적화 되어 있습니다.">
+                            <i class="mdi mdi-information"></i>
+                        </button>
+                    </label>
+                    <div class="col-auto">
+                        <button type="button" class="btn btn-info align-middle btn-select"
+                            data-width="{{ $currentGroup->pc_width }}" data-height="{{ $currentGroup->pc_height }}">
+                            <i class="mdi mdi-cloud-upload me-1"></i>
+                            {{ trans('ui-bootstrap5::word.button.choose_a_image_file') }}
+                        </button>
+                    </div>
                 </div>
-            </div>
-            <div class="row mt-2 justify-content-center">
-                <div class="col-auto">
+                <div class="panel-body text-center">
                     <img src="{{ Bootstrap5::noImage() }}" class="cropped-image img-fluid"
-                        data-default-src="{{ Bootstrap5::noImage() }}" data-crud-edit-name="image_file_url"
+                        data-default-src="{{ Bootstrap5::noImage() }}" data-crud-edit-name="pc_image_file_url"
                         data-crud-edit-type="image">
                     <input type="file" class="d-none" accept=".png,.jpg,.gif" />
-                    <input type="hidden" name="image" />
+                    <input type="hidden" name="pc_image" />
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="col-12 col-sm">
+        <div data-type="cropper-image-upload">
+            <div class="panel-wrap mb-2">
+                <div class="panel-heading d-flex align-items-center justify-content-between">
+                    <label for="mobile_image" class="col">
+                        {{ trans('mpcs-banner::word.attr.mobile_image') }}
+                        <button type="button" class="btn p-0" data-bs-container="body" data-bs-toggle="popover"
+                            data-bs-placement="top" title="모바일 규격"
+                            data-bs-content="{{ $currentGroup->mobile_width }}px * {{ $currentGroup->mobile_height }}px 사이즈에 최적화 되어 있습니다.">
+                            <i class="mdi mdi-information"></i>
+                        </button>
+                    </label>
+                    <div class="col-auto">
+                        <button type="button" class="btn btn-info align-middle btn-select"
+                            data-width="{{ $currentGroup->mobile_width }}"
+                            data-height="{{ $currentGroup->mobile_height }}">
+                            <i class="mdi mdi-cloud-upload me-1"></i>
+                            {{ trans('ui-bootstrap5::word.button.choose_a_image_file') }}
+                        </button>
+                    </div>
+                </div>
+                <div class="panel-body text-center">
+                    <img src="{{ Bootstrap5::noImage() }}" class="cropped-image img-fluid"
+                        data-default-src="{{ Bootstrap5::noImage() }}" data-crud-edit-name="mobile_image_file_url"
+                        data-crud-edit-type="image">
+                    <input type="file" class="d-none" accept=".png,.jpg,.gif" />
+                    <input type="hidden" name="mobile_image" />
                 </div>
             </div>
         </div>

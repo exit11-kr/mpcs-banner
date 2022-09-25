@@ -47,7 +47,7 @@ class BannerRepository implements BannerRepositoryInterface
             $this->model->banner_group_id = $this->request['banner_group_id'];
             $this->model->title = $this->request['title'];
             $this->model->content = $this->request['content'] ?? null;
-            $this->model->background_color = $this->request['background_color'] ?? null;
+            $this->model->color = $this->request['color'] ?? null;
             $this->model->url = $this->request['url'] ?? null;
             $this->model->target = $this->request['target'];
             $this->model->is_visible = $this->request['is_visible'] ?? null;
@@ -56,14 +56,25 @@ class BannerRepository implements BannerRepositoryInterface
             $this->model->user_id = Core::user()->id;
 
             /* 이미지 Base64 방식 저장 */
-            $requestImage = $this->request['image'] ?? null;
-            if (substr($requestImage, 0, 10) === "data:image") {
-                $base64ToFile = Bootstrap5::base64ToFile($requestImage, $this->model->upload_disk, $this->model->image_root_dir);
+            $requestPcImage = $this->request['pc_image'] ?? null;
+            if (substr($requestPcImage, 0, 10) === "data:image") {
+                $base64ToFile = Bootstrap5::base64ToFile($requestPcImage, $this->model->upload_disk, $this->model->image_root_dir);
                 if ($base64ToFile) {
-                    $this->model->image = $base64ToFile;
+                    $this->model->pc_image = $base64ToFile;
                 }
             } else {
-                $this->model->image = $requestImage;
+                $this->model->pc_image = $requestPcImage;
+            }
+
+            /* 이미지 Base64 방식 저장 */
+            $requestMobileImage = $this->request['pc_image'] ?? null;
+            if (substr($requestMobileImage, 0, 10) === "data:image") {
+                $base64ToFile = Bootstrap5::base64ToFile($requestMobileImage, $this->model->upload_disk, $this->model->image_root_dir);
+                if ($base64ToFile) {
+                    $this->model->mobile_image = $base64ToFile;
+                }
+            } else {
+                $this->model->mobile_image = $requestMobileImage;
             }
 
 
@@ -93,19 +104,30 @@ class BannerRepository implements BannerRepositoryInterface
             $model->period_from = $this->request['period_from'];
             $model->period_to = $this->request['period_to'];
             $model->is_visible = $this->request['is_visible'] ?? null;
-            $model->background_color = $this->request['background_color'] ?? null;
+            $model->color = $this->request['color'] ?? null;
             $model->url = $this->request['url'] ?? null;
             $model->user_id = Core::user()->id;
 
             /* 이미지 Base64 방식 저장 */
-            $requestImage = $this->request['image'] ?? null;
-            if (substr($requestImage, 0, 10) === "data:image") {
-                $base64ToFile = Bootstrap5::base64ToFile($requestImage, $model->upload_disk, $model->image_root_dir);
+            $requestPcImage = $this->request['pc_image'] ?? null;
+            if (substr($requestPcImage, 0, 10) === "data:image") {
+                $base64ToFile = Bootstrap5::base64ToFile($requestPcImage, $model->upload_disk, $model->image_root_dir);
                 if ($base64ToFile) {
-                    $model->image = $base64ToFile;
+                    $model->pc_image = $base64ToFile;
                 }
             } else {
-                $model->image = $requestImage;
+                $model->pc_image = $requestPcImage;
+            }
+
+            /* 이미지 Base64 방식 저장 */
+            $requestMobileImage = $this->request['mobile_image'] ?? null;
+            if (substr($requestMobileImage, 0, 10) === "data:image") {
+                $base64ToFile = Bootstrap5::base64ToFile($requestMobileImage, $model->upload_disk, $model->image_root_dir);
+                if ($base64ToFile) {
+                    $model->mobile_image = $base64ToFile;
+                }
+            } else {
+                $model->mobile_image = $requestMobileImage;
             }
 
             $result = $model->save();

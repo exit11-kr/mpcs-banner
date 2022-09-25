@@ -24,8 +24,10 @@ class BannerGroup extends JsonResource
             'description' => $this->description,
             'type' => $this->type,
             'type_str' => $this->type_str,
-            'width' => $this->width,
-            'height' => $this->height,
+            'pc_width' => $this->pc_width,
+            'pc_height' => $this->pc_height,
+            'mobile_width' => $this->mobile_width,
+            'mobile_height' => $this->mobile_height,
             'is_visible' => $this->is_visible,
             'banners' => $this->whenLoaded('banners', function () {
                 return new BannerCollection($this->banners);

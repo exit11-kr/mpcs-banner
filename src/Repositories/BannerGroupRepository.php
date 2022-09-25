@@ -40,8 +40,10 @@ class BannerGroupRepository implements BannerGroupRepositoryInterface
         $this->model->code = Str::lower($this->request['code']);
         $this->model->description = $this->request['description'] ?? null;
         $this->model->type = $this->request['type'];
-        $this->model->width = $this->request['width'] ?? null;
-        $this->model->height = $this->request['height'] ?? null;
+        $this->model->pc_width = $this->request['pc_width'] ?? null;
+        $this->model->pc_height = $this->request['pc_height'] ?? null;
+        $this->model->mobile_width = $this->request['mobile_width'] ?? null;
+        $this->model->mobile_height = $this->request['mobile_height'] ?? null;
         $this->model->is_visible = $this->request['is_visible'] ?? false;
         $this->model->save();
 
@@ -55,8 +57,10 @@ class BannerGroupRepository implements BannerGroupRepositoryInterface
         $model->code = Str::lower($this->request['code']);
         $model->description = $this->request['description'] ?? null;
         $model->type = $this->request['type'];
-        $model->width = $this->request['width'];
-        $model->height = $this->request['height'];
+        $model->pc_width = $this->request['pc_width'];
+        $model->pc_height = $this->request['pc_height'];
+        $model->mobile_width = $this->request['mobile_width'];
+        $model->mobile_height = $this->request['mobile_height'];
         $model->is_visible = $this->request['is_visible'] ?? false;
         $model->save();
 

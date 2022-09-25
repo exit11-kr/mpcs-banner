@@ -1,7 +1,7 @@
 {!! Form::open()->get()->attrs(['class' => 'search-form-wrap'])->idPrefix('search_') !!}
 <div class="row">
     <div class="col">
-        {!! Form::text('banner_group_id')->type('hidden')->value(request()->banner_group_id) !!}
+        {!! Form::text('banner_group_id')->type('hidden')->value($currentGroup->id) !!}
         {!! Form::text('type')->type('hidden') !!}
         {!! Form::text('title', 'Title')->placeholder(trans('mpcs-article::word.attr.title')) !!}
         {!! Form::text('content', 'content')->placeholder(trans('mpcs-article::word.attr.content')) !!}

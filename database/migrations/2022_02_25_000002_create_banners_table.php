@@ -19,7 +19,8 @@ class CreateBannersTable extends Migration
             $table->integer('order')->unsigned()->default(1);
             $table->string('title', 100);
             $table->text('content')->nullable();
-            $table->string('image')->nullable();
+            $table->string('pc_image')->nullable();
+            $table->string('mobile_image')->nullable();
             $table->string('background_color', 50)->nullable();
             $table->string('url')->nullable();
             $table->boolean('target')->default(0);
