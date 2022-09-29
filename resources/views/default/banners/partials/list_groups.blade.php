@@ -4,17 +4,16 @@
             data-bs-toggle="dropdown">
             {{ trans('mpcs-banner::menu.banner_groups') }}
         </button>
-        <div id="asideNavCategory" class="list-group mb-2">
+        <div class="list-group mb-2">
             <h6 class="dropdown-header d-none">
                 {{ trans('mpcs-banner::menu.banner_groups') }}
             </h6>
             @forelse ($datas as $menu)
-                <button type="button" data-list-param="banner_group_id" data-list-title="{{ $menu->name }}"
-                    data-list-value="{{ $menu->id }}"
+                <a href="{{ route(Bootstrap5::routePrefix() . '.banners.index', ['banner_group_id' => $menu->id]) }}"
                     class="list-group-item list-group-item-action d-flex justify-content-between {{ $menu->id == $currentGroupId ? 'active' : '' }}">
                     {{ $menu->name }}
                     <span class="badge bg-light badge-pill text-primary">{{ $menu->type_str }}</span>
-                </button>
+                </a>
             @empty
             @endforelse
         </div>

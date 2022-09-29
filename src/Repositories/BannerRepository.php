@@ -49,7 +49,7 @@ class BannerRepository implements BannerRepositoryInterface
             $this->model->content = $this->request['content'] ?? null;
             $this->model->color = $this->request['color'] ?? null;
             $this->model->url = $this->request['url'] ?? null;
-            $this->model->target = $this->request['target'];
+            $this->model->target = $this->request['target'] ?? 0;
             $this->model->is_visible = $this->request['is_visible'] ?? null;
             $this->model->period_from = $this->request['period_from'];
             $this->model->period_to = $this->request['period_to'];
@@ -100,7 +100,7 @@ class BannerRepository implements BannerRepositoryInterface
         try {
             $model->title = $this->request['title'];
             $model->content = $this->request['content'] ?? null;
-            $model->target = $this->request['target'];
+            $model->target = $this->request['target'] ?? 0;
             $model->period_from = $this->request['period_from'];
             $model->period_to = $this->request['period_to'];
             $model->is_visible = $this->request['is_visible'] ?? null;

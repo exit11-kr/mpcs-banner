@@ -43,6 +43,17 @@ class BannerGroup extends Model
     }
 
     /**
+     * items
+     * 웹 공개용 데이터
+     *
+     * @return void
+     */
+    public function items()
+    {
+        return $this->hasMany(Banner::class, 'banner_group_id')->released()->orderBy('order', 'asc');
+    }
+
+    /**
      * banners
      *
      * @return void

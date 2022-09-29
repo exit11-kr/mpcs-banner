@@ -45,6 +45,8 @@ class Banner extends Model implements Orderable
         'status_released' => 'boolean',
     ];
 
+    protected $appends = ['mobile_image_file_url', 'pc_image_file_url'];
+
     private $uploadDisk;
     private $imageRootDir;
 
@@ -97,7 +99,7 @@ class Banner extends Model implements Orderable
     public function scopeReleased($query)
     {
         $now = Carbon::now()->format('Y-m-d H:i:s');
-        return $query->where('period_from', '<=', $now)->where('period_to', '>=', $now)->isVisible();
+        return $query->where('period_from', '<=', $now)->where('period_to', '>=', $now)->where('is_visible', true);
     }
 
     /**

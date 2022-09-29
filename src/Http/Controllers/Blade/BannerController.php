@@ -30,10 +30,11 @@ class BannerController extends Controller
             return redirect()->route(Core::getConfig('ui_route_name_prefix') . ".home");
         }
 
-        if (!$request->banner_group_id) {
-            $currentGroup = $groups->where('id', $groups->first()->id)->first();
-        } else {
-            $currentGroup = $groups->where('id', $request->banner_group_id)->first();
+        $currentGroup = $groups->where('id', $request->banner_group_id)->first();
+
+        // 그룹지정없이 들어올 경우 강제 리다이렉트
+        if (!$request->banner_group_id || !$currentGroup) {
+            return redirect()->route(Core::getConfig('ui_route_name_prefix') . '.banners.index', ['banner_group_id' => $groups->first()->id]);
         }
 
         return view(Facade::theme('banners.index'), compact('groups', 'currentGroup'))->withInput($request->flash());
