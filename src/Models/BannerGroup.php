@@ -26,9 +26,10 @@ class BannerGroup extends Model
 
     public static $typeStrings = [
         1 => 'popup',
-        2 => 'promotion',
-        3 => 'banner',
-        4 => 'sponsor',
+        2 => 'header',
+        3 => 'promotion',
+        4 => 'banner',
+        5 => 'sponsor',
     ];
 
     /**

@@ -1,5 +1,5 @@
 <div class="row">
-    <div class="col-12 col-sm-auto text-center mb-3 mb-sm-0">
+    <div class="col-12 col-sm text-center mb-3 mb-sm-0">
         <div class="panel-wrap mb-2">
             <div class="panel-heading d-flex align-items-center justify-content-between">
                 <label for="pc_image" class="col">
@@ -12,11 +12,11 @@
                 </label>
             </div>
             <div class="panel-body text-center">
-                <img alt="" data-crud-show-name="pc_image_file_url">
+                <img class="img-fluid" alt="" data-crud-show-name="pc_image_file_url">
             </div>
         </div>
     </div>
-    <div class="col-12 col-sm-auto text-center mb-3 mb-sm-0">
+    <div class="col-12 col-sm text-center mb-3 mb-sm-0">
         <div class="panel-wrap mb-2">
             <div class="panel-heading d-flex align-items-center justify-content-between">
                 <label for="mobile_image" class="col">
@@ -29,35 +29,37 @@
                 </label>
             </div>
             <div class="panel-body text-center">
-                <img alt="" data-crud-show-name="mobile_image_file_url">
+                <img class="img-fluid" alt="" data-crud-show-name="mobile_image_file_url">
             </div>
         </div>
     </div>
+</div>
+<div class="row">
     <div class="col-12 col-sm">
         <dl class="dl">
-            <dt class="col-4">ID</dt>
-            <dd class="col-8" data-crud-show-name="id"></dd>
-            <dt class="col-4">{{ Str::title(trans('mpcs-article::word.attr.status')) }}</dt>
-            <dd class="col-8" data-crud-show-name="status_released"></dd>
+            <dt class="col-3">ID</dt>
+            <dd class="col-9" data-crud-show-name="id"></dd>
+            <dt class="col-3">{{ Str::title(trans('mpcs-article::word.attr.status')) }}</dt>
+            <dd class="col-9" data-crud-show-name="status_released"></dd>
 
-            <dt class="col-4">{{ Str::title(trans('mpcs-article::word.attr.period_from')) }}</dt>
-            <dd class="col-8" data-style="date" data-crud-show-type="datetime" data-crud-show-name="period_from"></dd>
-            <dt class="col-4">{{ Str::title(trans('mpcs-article::word.attr.period_to')) }}</dt>
-            <dd class="col-8" data-style="date" data-crud-show-type="datetime" data-crud-show-name="period_to">
+            <dt class="col-3">{{ Str::title(trans('mpcs-article::word.attr.period_from')) }}</dt>
+            <dd class="col-9" data-style="date" data-crud-show-type="datetime" data-crud-show-name="period_from"></dd>
+            <dt class="col-3">{{ Str::title(trans('mpcs-article::word.attr.period_to')) }}</dt>
+            <dd class="col-9" data-style="date" data-crud-show-type="datetime" data-crud-show-name="period_to">
             </dd>
 
-            <dt class="col-4">{{ Str::title(trans('mpcs-article::word.attr.title')) }}</dt>
-            <dd class="col-8" data-crud-show-name="title"></dd>
+            <dt class="col-3">{{ Str::title(trans('mpcs-article::word.attr.title')) }}</dt>
+            <dd class="col-9" data-crud-show-name="title"></dd>
 
-            <dt class="col-4">{{ Str::title(trans('mpcs-article::word.attr.content')) }}</dt>
-            <dd class="col-8" data-crud-show-name="content"></dd>
+            <dt class="col-3">{{ Str::title(trans('mpcs-article::word.attr.content')) }}</dt>
+            <dd class="col-9" data-crud-show-name="content"></dd>
 
-            <dt class="col-4">{{ Str::title(trans('mpcs-article::word.attr.created_at')) }}</dt>
-            <dd class="col-8" data-style="date" data-crud-show-type="datetime" data-crud-show-name="created_at"></dd>
-            <dt class="col-4">{{ Str::title(trans('mpcs-article::word.attr.updated_at')) }}</dt>
-            <dd class="col-8" data-style="date" data-crud-show-type="datetime" data-crud-show-name="updated_at"></dd>
-            <dt class="col-4">{{ Str::title(trans('mpcs-article::word.attr.writer')) }}</dt>
-            <dd class="col-8" data-crud-show-name="user[name]"></dd>
+            <dt class="col-3">{{ Str::title(trans('mpcs-article::word.attr.created_at')) }}</dt>
+            <dd class="col-9" data-style="date" data-crud-show-type="datetime" data-crud-show-name="created_at"></dd>
+            <dt class="col-3">{{ Str::title(trans('mpcs-article::word.attr.updated_at')) }}</dt>
+            <dd class="col-9" data-style="date" data-crud-show-type="datetime" data-crud-show-name="updated_at"></dd>
+            <dt class="col-3">{{ Str::title(trans('mpcs-article::word.attr.writer')) }}</dt>
+            <dd class="col-9" data-crud-show-name="user[name]"></dd>
         </dl>
     </div>
 </div>
