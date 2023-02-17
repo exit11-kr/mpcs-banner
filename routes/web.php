@@ -3,13 +3,18 @@
 use Illuminate\Support\Facades\Route;
 use Illuminate\Routing\Router;
 use Mpcs\Core\Facades\Core;
+use Stancl\Tenancy\Middleware\InitializeTenancyByDomain;
+use Stancl\Tenancy\Middleware\PreventAccessFromCentralDomains;
+
+$tenantyMiddlewares = [InitializeTenancyByDomain::class, PreventAccessFromCentralDomains::class];
+$middlewares = array_merge($tenantyMiddlewares, Core::getConfig('route.middleware'));
 
 // Api Route
 Route::group([
     'as'          => Core::getConfigString('route_name_prefix'),
     'prefix'        => Core::getConfig('url_prefix'),
     'namespace'     => 'Mpcs\Banner\Http\Controllers\Api',
-    'middleware'    => Core::getConfig('route.middleware'),
+    'middleware'    => $middlewares,
 ], function (Router $router) {
     $router->resource('banner_groups', 'BannerGroupController')->names('banner_groups')->except(['destroy']);
     $router->resource('banners', 'BannerController')->names('banners');
@@ -21,7 +26,7 @@ Route::group([
     'as'          => Core::getConfigString('ui_route_name_prefix'),
     'prefix'        => Core::getConfig('ui_url_prefix'),
     'namespace'     => 'Mpcs\Banner\Http\Controllers\Blade',
-    'middleware'    => config('mpcs.route.middleware'),
+    'middleware'    => $middlewares,
 ], function (Router $router) {
     $router->get('banner_groups/list', 'BannerGroupController@list')->name('banner_groups.list');
     $router->resource('banner_groups', 'BannerGroupController')->except(['destroy']);
