@@ -15,7 +15,6 @@ class Banner extends Model implements Orderable
     use ModelTrait, OrderableTrait;
 
     protected $table = 'banners';
-    protected $dates = ['created_at', 'updated_at', 'deleted_at', 'period_from', 'period_to'];
     protected $guarded = ['id'];
     protected static $m_params = [
         'default_load_relations' => ['bannerGroup', 'user'],

@@ -11,13 +11,17 @@ class BannerGroup extends Model
     use SoftDeletes, ModelTrait;
 
     protected $table = 'banner_groups';
-    protected $dates = ['deleted_at'];
     protected $guarded = ['id'];
     public $appends = ['type_str'];
     // $sortable 정의시 정렬기능을 제공할 필드는 필수 기입
     public $sortable = ['id', 'order', 'is_visible'];
     public $defaultSortable = [
         'id' => 'asc',
+    ];
+    protected $casts = [
+        'created_at' => 'datetime:Y-m-d H:i',
+        'updated_at' => 'datetime:Y-m-d H:i',
+        'deleted_at' => 'datetime:Y-m-d H:i',
     ];
 
     protected static $m_params = [
