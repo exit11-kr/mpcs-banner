@@ -27,6 +27,6 @@ class BannerAuthServiceProvider extends ServiceProvider
      */
     public function boot()
     {
-        $this->registerPolicies();
+        // $this->registerPolicies();
     }
 }
