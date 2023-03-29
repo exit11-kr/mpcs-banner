@@ -21,7 +21,7 @@ class CreateBannersTable extends Migration
             $table->text('content')->nullable();
             $table->string('pc_image')->nullable();
             $table->string('mobile_image')->nullable();
-            $table->string('background_color', 50)->nullable();
+            $table->string('color', 50)->nullable();
             $table->string('url')->nullable();
             $table->boolean('target')->default(0);
             $table->dateTime('period_from');
