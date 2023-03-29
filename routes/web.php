@@ -9,7 +9,7 @@ Route::group([
     'as'          => Core::getRouteNamePrefix('api'),
     'prefix'        => Core::getUrlPrefix('api'),
     'namespace'     => 'Mpcs\Banner\Http\Controllers\Api',
-    'middleware'    => Core::getUniversalMiddlewares('api'),
+    'middleware'    => ['g.universal', 'g.api'],
 ], function (Router $router) {
     $router->resource('banner_groups', 'BannerGroupController')->names('banner_groups')->except(['destroy']);
     $router->resource('banners', 'BannerController')->names('banners');
@@ -21,7 +21,7 @@ Route::group([
     'as'          => Core::getRouteNamePrefix('ui'),
     'prefix'        => Core::getUrlPrefix('ui'),
     'namespace'     => 'Mpcs\Banner\Http\Controllers\Blade',
-    'middleware'    => Core::getUniversalMiddlewares('ui'),
+    'middleware'    => ['g.universal', 'g.ui'],
 ], function (Router $router) {
     $router->get('banner_groups/list', 'BannerGroupController@list')->name('banner_groups.list');
     $router->resource('banner_groups', 'BannerGroupController')->except(['destroy']);
@@ -36,7 +36,7 @@ Route::group([
 //     'as'            => "api_web",
 //     'prefix'        => "api_web",
 //     'namespace'     => 'Mpcs\Banner\Http\Controllers\Api',
-//     'middleware'    => Core::getUniversalMiddlewares('open'),
+//     'middleware'    => ['g.universal', 'g.open'],
 // ], function (Router $router) {
 //     $router->resource('banners', 'PopupController')->names('banners')->only(['index', 'show']);
 // });
