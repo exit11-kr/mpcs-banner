@@ -147,6 +147,20 @@ class BannerInstallSeeder extends Seeder
                 'updated_at'  => date("Y-m-d H:i:s"),
                 'deleted_at'  => null,
             ],
+            [
+                'name'        => 'Main Promotion',
+                'code'        => 'main_promotion',
+                'description' => 'Mainpage Promotion',
+                'type'        => 3,
+                'pc_width'    => 1600,
+                'pc_height'   => 900,
+                'mobile_width'  => 640,
+                'mobile_height' => 1138,
+                'is_visible'  => 1,
+                'created_at'  => date("Y-m-d H:i:s"),
+                'updated_at'  => date("Y-m-d H:i:s"),
+                'deleted_at'  => null,
+            ],
         ]);
     }
 }

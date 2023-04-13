@@ -19,8 +19,8 @@ class BannerTableSeeder extends Seeder
     {
         DB::statement('SET FOREIGN_KEY_CHECKS=0;');
 
-        BannerGroup::truncate();
-        factory(BannerGroup::class, 10)->create();
+        // BannerGroup::truncate();
+        // factory(BannerGroup::class, 10)->create();
 
         Banner::truncate();
         factory(Banner::class, 100)->create();

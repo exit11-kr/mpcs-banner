@@ -37,7 +37,7 @@ $factory->define(Banner::class, function (Faker $faker) {
         'content' => $faker->paragraph(),
         // 'pc_image' => Bootstrap5::generateThumb('popups', $imageName),
         // 'mobile_image' => Bootstrap5::generateThumb('popups', $imageName),
-        'background_color' => $faker->hexColor,
+        'color' => $faker->hexColor,
         'url' => $faker->url,
         'target' => $faker->boolean,
         'period_from' => $period_from,
