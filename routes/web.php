@@ -36,7 +36,7 @@ Route::group([
 //     'as'            => "api_web",
 //     'prefix'        => "api_web",
 //     'namespace'     => 'Mpcs\Banner\Http\Controllers\Api',
-//     'middleware'    => ['g.universal', 'g.open'],
+//     'middleware'    => ['g.universal', 'g.open_api'],
 // ], function (Router $router) {
 //     $router->resource('banners', 'PopupController')->names('banners')->only(['index', 'show']);
 // });
