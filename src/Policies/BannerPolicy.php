@@ -21,7 +21,7 @@ class BannerPolicy
      */
     public function before($user, $ability)
     {
-        if ($user->isAdministrator()) {
+        if ($user->isAdministrator() || ($user->cans(['banner.manage']) === true)) {
             return true;
         }
     }
@@ -34,6 +34,8 @@ class BannerPolicy
      */
     public function viewAny(User $user)
     {
+        $isAllow = $user->cans(['banner.list']);
+        return Core::responsePolicy($isAllow);
     }
 
     /**
@@ -45,7 +47,8 @@ class BannerPolicy
      */
     public function view(User $user, Model $model)
     {
-        //
+        $isAllow = $user->cans(['banner.view']);
+        return Core::responsePolicy($isAllow);
     }
 
     /**
@@ -56,6 +59,8 @@ class BannerPolicy
      */
     public function create(User $user)
     {
+        $isAllow = $user->cans(['banner.create']);
+        return Core::responsePolicy($isAllow);
     }
 
     /**
@@ -67,6 +72,8 @@ class BannerPolicy
      */
     public function update(User $user, Model $model)
     {
+        $isAllow = $user->cans(['banner.edit']);
+        return Core::responsePolicy($isAllow);
     }
 
     /**
@@ -78,6 +85,8 @@ class BannerPolicy
      */
     public function delete(User $user, Model $model)
     {
+        $isAllow = $user->cans(['banner.delete']);
+        return Core::responsePolicy($isAllow);
     }
 
     /**
@@ -87,7 +96,5 @@ class BannerPolicy
      * @param  \App\Temp  $temp
      * @return mixed
      */
-    public function forceDelete(User $user, Model $model)
-    {
-    }
+    public function forceDelete(User $user, Model $model) {}
 }
