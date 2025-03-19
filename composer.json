@@ -1,33 +1,33 @@
 {
-  "name": "mpcs/banner",
-  "description": "mpcs core : banner extention",
-  "type": "library",
-  "authors": [
-    {
-      "name": "HWAJUN LEE",
-      "email": "ezrock@naver.com"
+    "name": "mpcs/banner",
+    "description": "mpcs core : banner extention",
+    "type": "library",
+    "authors": [
+        {
+            "name": "HWAJUN LEE",
+            "email": "ezrock@naver.com"
+        }
+    ],
+    "require": {
+        "mpcs/bootstrap5": "~0.3.0|dev-master",
+        "mpcs/core": "~0.3.0|dev-master|^1.0|v1.x-dev"
+    },
+    "autoload": {
+        "psr-4": {
+            "Mpcs\\Banner\\": "src/"
+        }
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Mpcs\\Banner\\BannerServiceProvider",
+                "Mpcs\\Banner\\BannerAuthServiceProvider",
+                "Mpcs\\Banner\\BannerEventServiceProvider",
+                "Mpcs\\Banner\\BannerBroadcastServiceProvider"
+            ],
+            "aliases": {
+                "Banner": "Mpcs\\Banner\\Facades\\Banner"
+            }
+        }
     }
-  ],
-  "require": {
-    "mpcs/bootstrap5": "~0.3.0|dev-master",
-    "mpcs/core": "~0.3.0|dev-master"
-  },
-  "autoload": {
-    "psr-4": {
-      "Mpcs\\Banner\\": "src/"
-    }
-  },
-  "extra": {
-    "laravel": {
-      "providers": [
-        "Mpcs\\Banner\\BannerServiceProvider",
-        "Mpcs\\Banner\\BannerAuthServiceProvider",
-        "Mpcs\\Banner\\BannerEventServiceProvider",
-        "Mpcs\\Banner\\BannerBroadcastServiceProvider"
-      ],
-      "aliases": {
-        "Banner": "Mpcs\\Banner\\Facades\\Banner"
-      }
-    }
-  }
 }
